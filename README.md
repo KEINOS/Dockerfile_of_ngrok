@@ -1,8 +1,8 @@
-# Dockerfile of ngrok
+# Dockerfile of ngrok on Alpine Linux
 
-Dockerfile of ngrok on Alpine Linux.
+This container publishes other container's http connection to the public via [ngrok](https://ngrok.com/).
 
-This container publishes other container's http connection in the same Docker network to the public via [ngrok](https://ngrok.com/).
+It publishes only the http connection in the same Docker network, so you don't need to expose the port to the host.
 
 If you are familiar to docker-compose, then see the [sample docker-compose.yml file](./docker-compose.yml) first to capture the sense.
 

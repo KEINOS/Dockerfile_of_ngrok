@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  ngrok:
+    container_name: ngrok
+    build: .
+    image: keinos/ngrok
+    env_file: ENVFILE.env
+    volumes:
+      - ./entrypoint.sh:/entrypoint.sh
+      - ./ngrok.log:/root/ngrok.log
+    depends_on:
+      - kagome
+  kagome:
+    container_name: kagome
+    image: ikawaha/kagome:latest
+    command: server -http=":80"
